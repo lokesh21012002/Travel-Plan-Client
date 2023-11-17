@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Login from './components/Login';
+import Registration from './components/Registration';
+import { BrowserRouter,Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import Demo from './components/Demo';
+import Protected from './components/Protected';
+import UserHome from './components/UserHome';
+import AdminHome from './components/AdminHome';
+import { useState } from 'react';
 function App() {
+
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+ const handleLogin = (loggedIn) => {
+  console.log("Logged",loggedIn);
+    setIsLoggedIn(loggedIn)
+    ;
+ };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+     <Routes>
+          <Route path="/signup" element={<Registration />} />
+          <Route path="/login"   element={<Demo handleLogin={handleLogin} />} />
+          <Route path='/user/*'
+                element={
+                  <Protected isLoggedIn={isLoggedIn}>
+                    <UserHome />
+                   </Protected>
+          }/>
+        
+
+              
+
+         
+
+           
+
+
+
+          
+           <Route path='/admin/*'
+                element={
+                  <Protected isLoggedIn={isLoggedIn}>
+                    <AdminHome />
+                   </Protected>
+          }/>
+          
+    </Routes>
+    
+  </BrowserRouter>
   );
 }
 

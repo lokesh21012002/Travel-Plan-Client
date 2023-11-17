@@ -1,0 +1,20 @@
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user {
+    font-family: Arial, sans-serif;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.user-table th {
+    background-color: #2979ff;
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
