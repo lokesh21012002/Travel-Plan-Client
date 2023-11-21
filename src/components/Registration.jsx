@@ -44,9 +44,9 @@ const SignupForm = () => {
     const cred={username,password,role};
      const response=await axios.post("/auth/signup",cred)
     console.log('A user signed up:', cred);
-    console.log(response.data);
+    console.log(response);
 
-    if(response.data.status==="NOT_FOUND"){
+    if(response.data.status!==undefined){
         // alert(response.data.message);
         Swal.fire({
                     title: 'Error!',

@@ -68,7 +68,7 @@ console.log(props.list);
       else{
         Swal.fire({
                     title: 'Sucesss!',
-                    text: 'Do you want to continue',
+                    text: 'Travel Plan Added Suceesfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })

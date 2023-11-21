@@ -44,7 +44,7 @@ if(response.status===200){
     props.fetchdata();
     Swal.fire({
                     title: 'Sucesss!',
-                    text: 'Do you want to continue',
+                    text: 'Travel Plan Updated sucessfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
@@ -55,7 +55,7 @@ if(response.status===200){
 else{
     Swal.fire({
                     title: 'Error!',
-                    text: 'Do you want to continue',
+                    text: 'Error creating in travel plan',
                     icon: 'error',
                     confirmButtonText: 'Cool'
                 })
